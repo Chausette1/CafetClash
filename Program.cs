@@ -49,8 +49,8 @@ namespace Base_CafetClash
             Player player4 = program._PlayerList.GetPlayerByName("Tutu");
             Player player5 = program._PlayerList.GetPlayerByName("Tata");
             Player player6 = program._PlayerList.GetPlayerByName("Tyty");
-            Player player7 = program._PlayerList.GetPlayerByName("Pd");
-            Player player8 = program._PlayerList.GetPlayerByName("Caca");
+            Player player7 = program._PlayerList.GetPlayerByName("Tomtom");
+            Player player8 = program._PlayerList.GetPlayerByName("Casio");
             player.MakeAvailable();
             player2.MakeAvailable();
             player3.MakeAvailable();
