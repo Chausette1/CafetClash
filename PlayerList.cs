@@ -1,4 +1,6 @@
-﻿namespace Base_CafetClash
+﻿using System.Linq.Expressions;
+
+namespace Base_CafetClash
 {
     class PlayerList
     {
@@ -14,17 +16,29 @@
         {
             _players = new List<Player>();
         }
+
+        public List<Player> Players
+        {
+            get => _players;
+        }
         public void AddPlayer(Player player)
         {
-            for (int i = 0; i < _players.Count; i++)
+            try
             {
-                if (_players[i].Name == player.Name)
+                for (int i = 0; i < _players.Count; i++)
                 {
-                    throw new Exception("Player already exist");
+                    if (_players[i].Name == player.Name)
+                    {
+                        throw new Exception("player already exist");
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("erreur : {0}", ex.Message);
+                return;
+            }
             _players.Add(player);
-            Console.WriteLine("player : {0} added", player.Name);
         }
 
         public Player? GetPlayerByName(string name)
@@ -92,7 +106,11 @@
              */
             Random rand = new Random();
             int index = rand.Next(PotentialOpponent.Count);
-            Player opponentFind = PotentialOpponent[index];
+            Player opponentFind = null;
+            if (PotentialOpponent.Count > 0)
+            {
+                opponentFind = PotentialOpponent[index];
+            }
             return opponentFind;
         }
 

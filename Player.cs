@@ -18,6 +18,7 @@
             this._available = false;
             this._gameStats = new Dictionary<TypeGame, GameStat>();
             this.InitGameProfile();
+            FileGestionner.CreatePlayerFile(this);
         }
 
         public bool Available
@@ -54,7 +55,7 @@
 
         public int AddPlayedMatch(TypeGame Game, bool Win, Player Opponent, int NbRound, int NbRoundGap)
         {
-            this._gameStats[Game].AddOpponent(Opponent);
+            this._gameStats[Game].AddOpponent(Opponent.Name);
             this._gameStats[Game].AddWin(Win);
             this._gameStats[Game].AddRound(NbRound);
             this._gameStats[Game].AddRoundGap(NbRoundGap);

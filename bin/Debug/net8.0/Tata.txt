@@ -1,0 +1,13 @@
+Tata
+PingPong
+1500
+0
+
+Flechette
+1000
+0
+
+BabyFoot
+1000
+0
+

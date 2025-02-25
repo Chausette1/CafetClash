@@ -1,0 +1,13 @@
+Tutu
+PingPong
+1100
+0
+
+Flechette
+1000
+0
+
+BabyFoot
+1000
+0
+

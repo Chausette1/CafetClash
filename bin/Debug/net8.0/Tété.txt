@@ -1,0 +1,13 @@
+Tété
+PingPong
+800
+0
+
+Flechette
+1000
+0
+
+BabyFoot
+1000
+0
+
