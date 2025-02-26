@@ -143,7 +143,7 @@ namespace Base_CafetClash
                 int nbRoundGap = player.GameStat[game].NbRoundGap[lastGame];
                 String OpponentName = player.GameStat[game].Opponent[lastGame];
                 lines[lineToChange] += $"{win.ToString()} | {nbRound.ToString()} | {nbRoundGap.ToString()} | {OpponentName} / ";
-                int eloToChange = (2 * indexOfGame);
+                int eloToChange = (4 * indexOfGame) - 2;
                 lines[eloToChange] = $"{player.GameStat[game].Elo.ToString()}";
                 File.WriteAllLines(path, lines);
             }

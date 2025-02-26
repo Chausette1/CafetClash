@@ -1,0 +1,13 @@
+Toto
+PingPong
+1150
+0
+True | 5 | 3 | Titi / True | 5 | 1 | Titi / True | 3 | 2 | Titi / False | 5 | 3 | Titi / True | 5 | 3 | Titi / True | 2 | 1 | Tyty / 
+Flechette
+1000
+0
+
+BabyFoot
+1050
+0
+True | 0 | 2 | Titi / 

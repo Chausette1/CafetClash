@@ -1,0 +1,13 @@
+Tété
+PingPong
+800
+0
+
+Flechette
+1000
+0
+True | 0 | 0 | Casio / False | 1 | 1 | Titi / 
+BabyFoot
+1000
+0
+

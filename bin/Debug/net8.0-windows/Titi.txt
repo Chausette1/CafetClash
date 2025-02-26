@@ -1,0 +1,13 @@
+Titi
+PingPong
+1000
+0
+
+Flechette
+1050
+0
+True | 1 | 1 | Tété / 
+BabyFoot
+900
+0
+False | 0 | 3 | Ilies / True | 2 | 1 | Ilies / False | 0 | 3 | Ilies / False | 0 | 2 | Toto / 

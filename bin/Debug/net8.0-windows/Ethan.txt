@@ -1,0 +1,13 @@
+Ethan
+PingPong
+900
+0
+False | 1 | 1 | Violette / False | 3 | 1 | Violette / 
+Flechette
+1000
+0
+
+BabyFoot
+1000
+0
+

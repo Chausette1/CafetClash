@@ -1,9 +1,13 @@
 ﻿using System.ComponentModel;
+using System.Runtime.InteropServices;
 
 namespace Base_CafetClash
 {
     internal class Program
     {
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool AllocConsole();
         /*
          * 
          * Classe programme qui permet de lancer le programme
@@ -17,8 +21,7 @@ namespace Base_CafetClash
             _PlayerList = new PlayerList();
             _PlayerList = FileGestionner.LoadPlayerFromFile();
         }
-
-        void AddMatchPlayed(TypeGame GameType, Player Player1, Player Opponent, bool Player1Win, int NbRound, int RoundGap)
+        public static void AddMatchPlayed(TypeGame GameType, Player Player1, Player Opponent, bool Player1Win, int NbRound, int RoundGap)
         {
             int NewEloPlayer1 = Player1.AddPlayedMatch(GameType, Player1Win, Opponent, NbRound, RoundGap);
             int NewEloOpponent = Opponent.AddPlayedMatch(GameType, !Player1Win, Player1, NbRound, RoundGap);
@@ -31,6 +34,7 @@ namespace Base_CafetClash
         static void Main(string[] args)
         {
             Program program = new Program();
+            //AllocConsole(); //for debugging
             foreach (Player playerToShow in program._PlayerList.Players)
             {
                 Console.WriteLine("player load : ");
@@ -43,34 +47,8 @@ namespace Base_CafetClash
                 }
                 Console.WriteLine("----------------------------------");
             }
-            Player player = program._PlayerList.GetPlayerByName("Toto");
-            Player player2 = program._PlayerList.GetPlayerByName("Titi");
-            Player player3 = program._PlayerList.GetPlayerByName("Tété");
-            Player player4 = program._PlayerList.GetPlayerByName("Tutu");
-            Player player5 = program._PlayerList.GetPlayerByName("Tata");
-            Player player6 = program._PlayerList.GetPlayerByName("Tyty");
-            Player player7 = program._PlayerList.GetPlayerByName("Tomtom");
-            Player player8 = program._PlayerList.GetPlayerByName("Casio");
-            player.MakeAvailable();
-            player2.MakeAvailable();
-            player3.MakeAvailable();
-            player4.MakeAvailable();
-            player5.MakeAvailable();
-            player6.MakeAvailable();
-            player7.MakeAvailable();
-            player8.MakeAvailable();
-            Player First = program._PlayerList.FindMatch(Difficulte.Easy, TypeGame.PingPong, player);
-            Player Second = program._PlayerList.FindMatch(Difficulte.Easy, TypeGame.PingPong, player);
-            Player Third = program._PlayerList.FindMatch(Difficulte.Easy, TypeGame.PingPong, player);
-            Player Four = program._PlayerList.FindMatch(Difficulte.Fair, TypeGame.PingPong, player);
-            Player Five = program._PlayerList.FindMatch(Difficulte.Fair, TypeGame.PingPong, player);
-            Player Six = program._PlayerList.FindMatch(Difficulte.Fair, TypeGame.PingPong, player);
-            Player Seven = program._PlayerList.FindMatch(Difficulte.Hard, TypeGame.PingPong, player);
-            Player Eight = program._PlayerList.FindMatch(Difficulte.Hard, TypeGame.PingPong, player);
-            Player Nine = program._PlayerList.FindMatch(Difficulte.Hard, TypeGame.PingPong, player);
-            Console.WriteLine("easy match : {0},{1},{2}", First.Name, Second.Name, Third.Name);
-            Console.WriteLine("fair match : {0},{1},{2}", Four.Name, Five.Name, Six.Name);
-            Console.WriteLine("hard match : {0},{1},{2}", Seven.Name, Eight.Name, Nine.Name);
+            ApplicationConfiguration.Initialize();
+            Application.Run(new MainPage(program._PlayerList));
 
         }
 

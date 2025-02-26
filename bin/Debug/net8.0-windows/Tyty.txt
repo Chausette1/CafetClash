@@ -1,0 +1,13 @@
+Tyty
+PingPong
+1150
+0
+False | 2 | 1 | Toto / 
+Flechette
+1000
+0
+
+BabyFoot
+1000
+0
+

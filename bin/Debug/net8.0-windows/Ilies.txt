@@ -1,0 +1,13 @@
+Ilies
+PingPong
+1000
+0
+
+Flechette
+1050
+0
+
+BabyFoot
+1000
+0
+True | 0 | 3 | Titi / False | 2 | 1 | Titi / True | 0 | 3 | Titi / 

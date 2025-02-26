@@ -1,0 +1,13 @@
+Casio
+PingPong
+1800
+0
+
+Flechette
+950
+0
+False | 0 | 0 | Tété / 
+BabyFoot
+1000
+0
+
