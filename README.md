@@ -23,10 +23,8 @@ Il fonctionne de la sorte :
             - On prend les joueurs ayant un élo similaire (entre -100 et +100) mais qui on un ratio de victoire supérieur à 50%
         - Pour choisir un joueurs dans la liste d'opposant potentiel :
             - On tire un nombre entre 1 et 100 (si on est pas dans un match équilibré)
-                - Si le nombre est inférieur à 81 (80% de chance) on prend les joueurs ayant un delta d'élo inférieur à 300 
-                et un ratio de victoire supérieur à 50% pour avoir un match facile équilibré.
-                - Si le nombre est entre 81 et 90 (10% de chance) on prend les joueurs ayant un delta d'élo supérieur à 300
-                et inférieur à 500 pour avoir un match très facile.
+                - Si le nombre est inférieur à 81 (80% de chance) on prend les joueurs ayant un delta d'élo inférieur à 300 et un ratio de victoire supérieur à 50% pour avoir un match facile équilibré.
+                - Si le nombre est entre 81 et 90 (10% de chance) on prend les joueurs ayant un delta d'élo supérieur à 300 et inférieur à 500 pour avoir un match très facile.
                 - Si le nombre est entre 91 et 100 (10% de chance) on prend les joueurs ayant un delta d'élo supérieur à 500
             - On choisi un joueur aléatoirement dans la nouvelle liste d'opposant potentiel
 
