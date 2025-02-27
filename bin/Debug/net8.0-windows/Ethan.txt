@@ -1,12 +1,12 @@
 Ethan
 PingPong
-900
+850
 0
-False | 1 | 1 | Violette / False | 3 | 1 | Violette / 
+False | 1 | 1 | Violette / False | 3 | 1 | Violette / False | 5 | 3 | EthanL / 
 Flechette
-1000
+950
 0
-
+False | 3 | 2 | Hugo / 
 BabyFoot
 1000
 0

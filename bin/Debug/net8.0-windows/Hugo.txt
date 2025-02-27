@@ -1,0 +1,13 @@
+Hugo
+PingPong
+1000
+0
+
+Flechette
+1050
+0
+True | 3 | 2 | Ethan / 
+BabyFoot
+1000
+0
+

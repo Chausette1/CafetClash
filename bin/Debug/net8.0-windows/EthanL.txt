@@ -1,8 +1,8 @@
-Tutu
+EthanL
 PingPong
 1050
 0
-False | 1 | 1 | Jean / 
+True | 5 | 3 | Ethan / 
 Flechette
 1000
 0
