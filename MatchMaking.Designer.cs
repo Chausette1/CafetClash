@@ -36,6 +36,7 @@
             comboBox3 = new ComboBox();
             checkedListBox1 = new CheckedListBox();
             label3 = new Label();
+            label4 = new Label();
             SuspendLayout();
             // 
             // comboBox1
@@ -115,11 +116,21 @@
             label3.TabIndex = 8;
             label3.Text = "Choisisez les joueurs disponible :";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(38, 32);
+            label4.Name = "label4";
+            label4.Size = new Size(50, 20);
+            label4.TabIndex = 9;
+            label4.Text = "";
+            // 
             // MatchMaking
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1063, 382);
+            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(checkedListBox1);
             Controls.Add(comboBox3);
@@ -144,5 +155,6 @@
         private ComboBox comboBox3;
         private CheckedListBox checkedListBox1;
         private Label label3;
+        private Label label4;
     }
 }

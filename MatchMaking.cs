@@ -34,12 +34,21 @@
         {
             _comboBox1Selected = true;
             _playerSelected = _data.GetPlayerByName(comboBox1.SelectedItem.ToString());
+            checkedListBox1.Items.Remove(_playerSelected.Name);
+            if (_comboBox2Selected)
+            {
+                label4.Text = _playerSelected.GameStat[_gameSelected].Elo.ToString();
+            }
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             _comboBox2Selected = true;
             _gameSelected = (TypeGame)Enum.Parse(typeof(TypeGame), comboBox2.SelectedItem.ToString());
+            if (_comboBox1Selected)
+            {
+                label4.Text = _playerSelected.GameStat[_gameSelected].Elo.ToString();
+            }
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -63,7 +72,7 @@
             }
             else
             {
-                label2.Text = Opponent.Name;
+                label2.Text = $"{Opponent.Name} {Opponent.GameStat[_gameSelected].Elo}";
             }
         }
 
@@ -81,5 +90,6 @@
                 checkedListBox1.SetItemChecked(checkedListBox1.SelectedIndex, false);
             }
         }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Linq.Expressions;
+﻿using System.Runtime.CompilerServices;
 
 namespace Base_CafetClash
 {
@@ -97,7 +97,7 @@ namespace Base_CafetClash
         }
 
 
-        private static Player ChoseGoodOpponentInList(List<Player> PotentialOpponent)
+        private Player ChoseGoodOpponentInList(List<Player> PotentialOpponent, TypeGame game, Player player, Difficulte difficulte)
         {
             /*
              * on tire un aléatoire entre 1 et 100, si on est entre 1 et 80  on prend un des joueurs entre 
@@ -105,10 +105,50 @@ namespace Base_CafetClash
              * joueur entre 300 et 500 de diff et entre 91 et 100 le reste.
              */
             Random rand = new Random();
-            int index = rand.Next(PotentialOpponent.Count);
             Player opponentFind = null;
+            if (!(difficulte == Difficulte.Fair))
+            {
+                int random = rand.Next(1, 101);
+                if (random <= 80)
+                {
+                    List<Player> PotentialOpponent2 = new List<Player>();
+                    foreach (Player opponent in PotentialOpponent)
+                    {
+                        int deltaElo = player.GameStat[game].Elo - opponent.GameStat[game].Elo;
+                        if (Math.Abs(deltaElo) >= 300 || this.CheckFiveGamePlayed(game, opponent))
+                        {
+                            PotentialOpponent2.Add(opponent);
+                        }
+                    }
+                    PotentialOpponent = PotentialOpponent2;
+                }
+                else if (random <= 90)
+                {
+                    List<Player> PotentialOpponent2 = new List<Player>();
+                    foreach (Player opponent in PotentialOpponent)
+                    {
+                        int deltaElo = player.GameStat[game].Elo - opponent.GameStat[game].Elo;
+                        if (Math.Abs(deltaElo) >= 500)
+                        {
+                            PotentialOpponent2.Add(opponent);
+                        }
+                    }
+                    PotentialOpponent = PotentialOpponent2;
+                }
+                else
+                {
+                    List<Player> PotentialOpponent2 = new List<Player>();
+                    foreach (Player opponent in PotentialOpponent)
+                    {
+                        int deltaElo = player.GameStat[game].Elo - opponent.GameStat[game].Elo;
+                        PotentialOpponent2.Add(opponent);
+                    }
+                    PotentialOpponent = PotentialOpponent2;
+                }
+            }
             if (PotentialOpponent.Count > 0)
             {
+                int index = rand.Next(PotentialOpponent.Count);
                 opponentFind = PotentialOpponent[index];
             }
             return opponentFind;
@@ -159,7 +199,7 @@ namespace Base_CafetClash
                 }
             }
             // joueur trouvé
-            Player opponentFind = ChoseGoodOpponentInList(PotentialOpponent);
+            Player opponentFind = ChoseGoodOpponentInList(PotentialOpponent, game, player, Difficulte.Easy);
             return opponentFind;
         }
 
@@ -196,7 +236,7 @@ namespace Base_CafetClash
                 }
             }
             // joueur trouvé
-            Player opponentFind = ChoseGoodOpponentInList(PotentialOpponent);
+            Player opponentFind = ChoseGoodOpponentInList(PotentialOpponent, game, player, Difficulte.Fair);
             return opponentFind;
         }
 
@@ -229,7 +269,7 @@ namespace Base_CafetClash
                 }
             }
             // joueur trouvé
-            Player opponentFind = ChoseGoodOpponentInList(PotentialOpponent);
+            Player opponentFind = ChoseGoodOpponentInList(PotentialOpponent, game, player, Difficulte.Hard);
             return opponentFind;
         }
     }
