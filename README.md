@@ -5,6 +5,7 @@ Le projet est réalisé en C# et utilise Windows Forms pour l'interface graphique.
 
 ## L'algorithme de matching
 L'algorithme de matching se base sur un système de point élo attribué au joueurs et calculé en fonction de leur performance lors des matchs.
+###
 Il fonctionne de la sorte :
     - On doit choisir un joueur de départ
     - On doit choisir un type de jeu
@@ -27,6 +28,6 @@ Il fonctionne de la sorte :
                 et inférieur à 500 pour avoir un match très facile.
                 - Si le nombre est entre 91 et 100 (10% de chance) on prend les joueurs ayant un delta d'élo supérieur à 500
             - On choisi un joueur aléatoirement dans la nouvelle liste d'opposant potentiel
-
+###
 Le but de l'algo est de faire en sorte que les joueurs aient des matchs équilibrés et que les joueurs ayant un élo très différent ne se rencontrent pas
 tout en permetant d'avoir des match difficile, équilibré et facile.
